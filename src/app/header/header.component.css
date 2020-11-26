@@ -1,0 +1,20 @@
+div
+{
+    height: 375px;
+    background: url('https://i2.wp.com/pingouin-grincheux.net/WordPress/wp-content/uploads/2015/08/Star-Wars-Concept-Art_19.jpg?resize=720%2C405') no-repeat;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:  100%;
+}
+
+img{
+  margin-left: auto;
+  width: 50px;
+}
+
+nav{
+  background-color: black;
+  flex-direction: row;
+  display: block;
+}
