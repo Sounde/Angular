@@ -1,3 +1,5 @@
+import { Url } from 'url';
+
 // tslint:disable-next-line: class-name
 export class vehicles{
   name: string;
@@ -18,6 +20,7 @@ export class vehicles{
   pilots: Array<number>;
   created: Date;
   edited: Date;
+  url: Array<string>;
 
   // tslint:disable-next-line: no-shadowed-variable
   constructor(vehicles?: any)
