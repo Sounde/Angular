@@ -1,4 +1,4 @@
-import { Url } from "url";
+
 
 export class films{
   title : string;
@@ -7,14 +7,14 @@ export class films{
   director : string;
   producer : string;
   release_date : Date;
-  characters : Array<Url>;
-  planets : Array<Url>;
-  starships : Array<Url>;
-  vehicles : Array<Url>;
-  species : Array<Url>;
+  characters : Array<string>;
+  planets : Array<string>;
+  starships : Array<string>;
+  vehicles : Array<string>;
+  species : Array<string>;
   created : Date;
   edited : Date;
-  url : Url;
+  url : string;
   constructor(films?: any){
     this.title = films.title;
     this.episode_id = films.episode_id;

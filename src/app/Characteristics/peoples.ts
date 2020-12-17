@@ -1,4 +1,4 @@
-import { Url } from 'url';
+
 
 // tslint:disable-next-line: class-name
 export class peoples{
@@ -11,14 +11,14 @@ export class peoples{
   eye_color : string;
   birth_year : string;
   gender : string;
-  homeworld : Url;
-  films : Array<Url>;
-  species : Array<Url>;
-  vehicles : Array<Url>;
-  starships : Array<Url>;
+  homeworld : string;
+  films : Array<string>;
+  species : Array<string>;
+  vehicles : Array<string>;
+  starships : Array<string>;
   created : Date;
   edited : Date;
-  url : Url;
+  url : string;
 
   constructor(peoples?: any)
   {

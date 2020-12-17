@@ -1,4 +1,4 @@
-import { Url } from 'url';
+
 
 // tslint:disable-next-line: class-name
 export class planets{
@@ -12,11 +12,11 @@ export class planets{
   terrain : string;
   surface_water : number;
   population : number;
-  residents : Array<Url>;
-  films : Array<Url>;
+  residents : Array<string>;
+  films : Array<string>;
   created : Date;
   edited : Date;
-  url : Url;
+  url : string;
 
   constructor(planets?: any)
   {

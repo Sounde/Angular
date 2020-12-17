@@ -1,4 +1,4 @@
-import { Url } from "url";
+
 
 export class species{
   name : string;
@@ -9,13 +9,13 @@ export class species{
   hair_color : string;
   eye_color : string;
   average_lifespan : number;
-  homeworld : Url;
+  homeworld : string;
   language : string;
-  people : Array<Url>;
-  films : Array<Url>;
+  people : Array<string>;
+  films : Array<string>;
   created : Date;
   edited : Date;
-  url : Url;
+  url : string;
   constructor(species?: any){
     this.name = species.name;
     this.classification = species.classification;
