@@ -1,21 +1,28 @@
 
 
+// tslint:disable-next-line: class-name
 export class species{
-  name : string;
-  classification : string;
-  designation : string;
-  average_height : number;
-  skin_color : string;
-  hair_color : string;
-  eye_color : string;
-  average_lifespan : number;
-  homeworld : string;
-  language : string;
-  people : Array<string>;
-  films : Array<string>;
-  created : Date;
-  edited : Date;
-  url : string;
+  name: string;
+  classification: string;
+  designation: string;
+  // tslint:disable-next-line: variable-name
+  average_height: number;
+  // tslint:disable-next-line: variable-name
+  skin_color: string;
+  // tslint:disable-next-line: variable-name
+  hair_color: string;
+  // tslint:disable-next-line: variable-name
+  eye_color: string;
+  // tslint:disable-next-line: variable-name
+  average_lifespan: number;
+  homeworld: string;
+  language: string;
+  people: Array<string>;
+  films: Array<string>;
+  created: Date;
+  edited: Date;
+  url: string;
+  // tslint:disable-next-line: no-shadowed-variable
   constructor(species?: any){
     this.name = species.name;
     this.classification = species.classification;

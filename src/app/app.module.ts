@@ -7,6 +7,8 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MoviesComponent } from './header/movies/movies.component';
+import { StarwarsIIIComponent } from './starwars-iii/starwars-iii.component';
+import { StarwarsIVComponent } from './starwars-iv/starwars-iv.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MoviesComponent } from './header/movies/movies.component';
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    MoviesComponent
+    MoviesComponent,
+    StarwarsIIIComponent,
+    StarwarsIVComponent
   ],
   imports: [
     BrowserModule,

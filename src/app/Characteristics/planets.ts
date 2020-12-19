@@ -3,21 +3,25 @@
 // tslint:disable-next-line: class-name
 export class planets{
 
-  name : string;
-  rotation_period : number;
-  orbital_period : number;
-  diameter : number;
-  climate : string;
-  gravity : string;
-  terrain : string;
-  surface_water : number;
-  population : number;
-  residents : Array<string>;
-  films : Array<string>;
-  created : Date;
-  edited : Date;
-  url : string;
+  name: string;
+  // tslint:disable-next-line: variable-name
+  rotation_period: number;
+  // tslint:disable-next-line: variable-name
+  orbital_period: number;
+  diameter: number;
+  climate: string;
+  gravity: string;
+  terrain: string;
+  // tslint:disable-next-line: variable-name
+  surface_water: number;
+  population: number;
+  residents: Array<string>;
+  films: Array<string>;
+  created: Date;
+  edited: Date;
+  url: string;
 
+  // tslint:disable-next-line: no-shadowed-variable
   constructor(planets?: any)
   {
     this.name = planets.name;

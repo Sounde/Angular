@@ -1,20 +1,25 @@
 
 
+// tslint:disable-next-line: class-name
 export class films{
-  title : string;
-  episode_id : number;
-  opening_crawl : string;
-  director : string;
-  producer : string;
-  release_date : Date;
-  characters : Array<string>;
-  planets : Array<string>;
-  starships : Array<string>;
-  vehicles : Array<string>;
-  species : Array<string>;
-  created : Date;
-  edited : Date;
-  url : string;
+  title: string;
+  // tslint:disable-next-line: variable-name
+  episode_id: number;
+  // tslint:disable-next-line: variable-name
+  opening_crawl: string;
+  director: string;
+  producer: string;
+  // tslint:disable-next-line: variable-name
+  release_date: Date;
+  characters: Array<string>;
+  planets: Array<string>;
+  starships: Array<string>;
+  vehicles: Array<string>;
+  species: Array<string>;
+  created: Date;
+  edited: Date;
+  url: string;
+  // tslint:disable-next-line: no-shadowed-variable
   constructor(films?: any){
     this.title = films.title;
     this.episode_id = films.episode_id;
@@ -31,4 +36,4 @@ export class films{
     this.edited = films.edited;
     this.url = films.url;
   }
-};
+}
