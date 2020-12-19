@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { films } from '../Characteristics/films';
 import { peoples } from '../Characteristics/peoples';
 import { planets } from '../Characteristics/planets';
@@ -12,7 +12,7 @@ import { movieService} from '../services/movie.service';
   templateUrl: './star-wars-i.component.html',
   styleUrls: ['./star-wars-i.component.css']
 })
-export class StarWarsIComponent  {
+export class StarWarsIComponent {
 
   peoples: Array<peoples>;
   planets: Array<planets>;
