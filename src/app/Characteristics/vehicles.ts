@@ -21,6 +21,7 @@ export class vehicles{
   created: Date;
   edited: Date;
   url: Array<string>;
+  results: any;
 
   // tslint:disable-next-line: no-shadowed-variable
   constructor(vehicles?: any)

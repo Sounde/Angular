@@ -2,6 +2,7 @@ import { Url } from 'url';
 
 // tslint:disable-next-line: class-name
 export class starships{
+  [x: string]: any;
   name: string;
   model: string;
   manufacturer: string;

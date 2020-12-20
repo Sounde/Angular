@@ -2,6 +2,7 @@
 
 // tslint:disable-next-line: class-name
 export class films{
+  [x: string]: any;
   title: string;
   // tslint:disable-next-line: variable-name
   episode_id: number;

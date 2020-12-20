@@ -2,6 +2,7 @@
 
 // tslint:disable-next-line: class-name
 export class planets{
+  [x: string]: any;
 
   name: string;
   // tslint:disable-next-line: variable-name

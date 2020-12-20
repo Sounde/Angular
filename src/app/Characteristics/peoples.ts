@@ -2,6 +2,7 @@
 
 // tslint:disable-next-line: class-name
 export class peoples{
+  [x: string]: any;
 
   name: string;
   height: number;

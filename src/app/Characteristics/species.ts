@@ -2,6 +2,7 @@
 
 // tslint:disable-next-line: class-name
 export class species{
+  [x: string]: any;
   name: string;
   classification: string;
   designation: string;
