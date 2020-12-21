@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { species } from '../Characteristics/species';
-import { speciesService } from '../services/species.service';
+import { Component } from '@angular/core';
+import { SpeciesService } from '../services/species.service';
 
 @Component({
   selector: 'app-species',
@@ -9,19 +8,18 @@ import { speciesService } from '../services/species.service';
 })
 export class SpeciesComponent {
 
-  data: Array<any>;
-
-  // tslint:disable-next-line: no-shadowed-variable
-  constructor(private speciesService: speciesService)
-  {
-    this.data = new Array<any>();
-  }
-
-  getDataSpeciesfromAPI(): void {
-    // tslint:disable-next-line:no-shadowed-variable
-    this.speciesService.getSpecies().subscribe((data) => {
-      this.data = data;
-    });
-  }
+  listSpecies: Array<any>;
+  constructor(private speciesservice: SpeciesService) {
+    this.listSpecies = new Array();
+    this.speciesservice.getSpecies().subscribe(
+    (data: any) => {​​​​​​​
+    console.log(data);
+      // tslint:disable-next-line:no-string-literal
+    this.listSpecies = this.listSpecies.concat(data['results']);
+      }​​​​​​​,
+      (err) => {​​​​​​​
+        console.log('err');
+      }​​​​​​);
+   }
 }
 

@@ -1,1 +1,12 @@
-<p>planets works!</p>
+<div *ngFor='let planet of listPlanet'>
+  <li>Name: {{planet.name}}</li>
+  <ul>Rotation-period: {{planet.rotation_period}}</ul>
+  <ul>Orbital-period: {{planet.orbital_period}}</ul>
+  <ul>diameter: {{planet.diameter}}</ul>
+  <ul>climate: {{planet.climate}}</ul>
+  <ul>gravity: {{planet.gravity}}</ul>
+  <ul>terrain : {{planet.terrain}}</ul>
+  <ul>surface_water: {{planet.surface_water}}</ul>
+  <ul>populations: {{planet.population}}</ul>
+</div>
+

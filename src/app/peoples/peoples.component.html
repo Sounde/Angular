@@ -1,3 +1,10 @@
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let p of peoples | async"> {{p.name}}</li>
-</ul>
+<div *ngFor="let item of listPeople">
+  <li>Name: {{item.name}}</li>
+    <ul>Height: {{item.height}}</ul>
+    <ul> Mass: {{item.mass}}</ul>
+    <ul>Hair_color: {{item.hair_color}}</ul>
+    <ul>Skin_color: {{item.skin_color}}</ul>
+    <ul>eye_color: {{item.eye_color}}</ul>
+    <ul>birth_year : {{item.birth_year}}</ul>
+    <ul>gender : {{item.gender}}</ul>
+</div>

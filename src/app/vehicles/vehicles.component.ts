@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { vehicles } from '../Characteristics/vehicles';
-import { vehiclesService } from '../services/vehicles.service';
+import { VehiclesService } from '../services/vehicles.service';
 
 @Component({
   selector: 'app-vehicles',
@@ -9,20 +8,18 @@ import { vehiclesService } from '../services/vehicles.service';
 })
 export class VehiclesComponent  {
 
-  data: Array<any>;
-
-  // tslint:disable-next-line: no-shadowed-variable
-  constructor(private vehiclesService: vehiclesService)
-  {
-    this.data = new Array<any>();
-  }
-  getDataVehiclesfromAPI(): void {
-    // tslint:disable-next-line:no-shadowed-variable
-    this.vehiclesService.getVehicles().subscribe((data) => {
-    this.data = data;
-    });
-  }
+  listVehicles: Array<any>;
+  constructor(private vehicleService: VehiclesService) {
+    this.listVehicles = new Array();
+    this.vehicleService.getVehicles().subscribe(
+    (data: any) => {​​​​​​​
+    console.log(data);
+      // tslint:disable-next-line:no-string-literal
+    this.listVehicles = this.listVehicles.concat(data['results']);
+      }​​​​​​​,
+      (err) => {​​​​​​​
+        console.log('err');
+      }​​​​​​);
+   }
 
 }
-
-

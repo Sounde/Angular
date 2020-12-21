@@ -1,1 +1,9 @@
-<p>movies works!</p>
+<button (click)="getDataMoviefromAPI()">Get DataMovie</button>
+<div *ngFor='let item of data'>
+  <li>STAR WARS : {{item.title}}</li>
+  <li>Productor : {{item.producer}}</li>
+  <li>Director: {{item.director}}</li>
+  <li>Year : {{item.release_date}}</li>
+  <li>Opening_crawl: {{item.opening_crawl}}</li>
+</div>
+

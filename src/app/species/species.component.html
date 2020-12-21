@@ -1,6 +1,11 @@
-<p>species works!</p>
-<button (click)="getDataSpeciesfromAPI()" >Get Data Species</button>
-
-<ul *ngFor="let species of data">
-  <li>{{species.name}}</li>
-</ul>
+<div *ngFor='let species of listSpecies'>
+  <li>Name: {{species.name}}</li>
+  <ul>classification: {{species.classification}}</ul>
+  <ul>designation: {{species.designation}}</ul>
+  <ul>average_height : {{species.average_height}}</ul>
+  <ul>skin_colors : {{species.skin_colors}}</ul>
+  <ul>hair_colors : {{species.hair_colors}}</ul>
+  <ul>eye_colors : {{species.eye_colors}}</ul>
+  <ul>average_lifespan : {{species.average_lifespan}}</ul>
+  <ul>language : {{species.language}}</ul>
+</div>

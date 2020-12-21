@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { films } from '../Characteristics/films';
 import { movieService } from '../services/movie.service';
 
 
@@ -8,17 +7,20 @@ import { movieService } from '../services/movie.service';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent {
 
-  movies: films[];
+  data: Array<any>;
   // tslint:disable-next-line:no-shadowed-variable
-  constructor(private movieService: movieService) {}
-
-  ngOnInit(): void{
-    this.movieService.getMovies().subscribe((result: any) => {
-      // tslint:disable-next-line: no-string-literal
-      this.movies = result['name'];
-  });
+  constructor(private movieService: movieService) {
+    this.data = new Array<any>();
   }
+
+  getDataMoviefromAPI(): void {
+    // tslint:disable-next-line:no-shadowed-variable
+    this.movieService.getMovies().subscribe((data) => {
+      this.data = data;
+    });
+  }
+
 }
 
