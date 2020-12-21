@@ -7,11 +7,26 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MoviesComponent } from './header/movies/movies.component';
-import { StarwarsIIIComponent } from './starwars-iii/starwars-iii.component';
-import { StarwarsIVComponent } from './starwars-iv/starwars-iv.component';
-import { SpeciesComponent } from './species/species.component';
-import { StarshipsComponent } from './starships/starships.component';
+import { AuthComponent } from './auth/auth.component';
+import { Routes } from '@angular/router';
+import { PeoplesComponent } from './peoples/peoples.component';
+import { PlanetsComponent } from './planets/planets.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { StarshipsComponent } from './starships/starships.component';
+import { SpeciesComponent } from './species/species.component';
+import { RouterModule } from '@angular/router' ;
+
+const appRoutes: Routes = [
+  { path: 'home', component: AppComponent },
+  { path: 'movies', component: MoviesComponent },
+  { path: 'auth', component: AuthComponent },
+  { path: 'peoples', component: PeoplesComponent },
+  { path: 'planets', component: PlanetsComponent },
+  { path: 'vehicles', component: VehiclesComponent },
+  { path: 'staships', component: StarshipsComponent },
+  { path: 'species', component: SpeciesComponent },
+
+];
 
 @NgModule({
   declarations: [
@@ -20,15 +35,17 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
     BodyComponent,
     FooterComponent,
     MoviesComponent,
-    StarwarsIIIComponent,
-    StarwarsIVComponent,
-    SpeciesComponent,
+    AuthComponent,
+    PeoplesComponent,
+    PlanetsComponent,
+    VehiclesComponent,
     StarshipsComponent,
-    VehiclesComponent
+    SpeciesComponent,
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
