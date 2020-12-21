@@ -1,15 +1,25 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { starships } from '../Characteristics/starships';
+import { Injectable } from '@angular/core';
+import { Observable, range } from 'rxjs';
+import { concatMap, mergeMap } from 'rxjs/operators';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class StarshipsService {
 
-// tslint:disable-next-line: class-name
-export class starshipsService {
-  constructor(private http: HttpClient, ){
-  }
-  getStarships(): Observable<starships[]>{
+  constructor(private http: HttpClient) { }
+  getStarships(): Observable<any> {
+    let fin = 0;
     const url = 'https://swapi.dev/api/starships/';
-    return this.http.get(url).pipe(map((data: starships) =>  data.results));
+    const NbElementParPage = 10;
+    return this.http.get(url).pipe(mergeMap( data => {
+      // tslint:disable-next-line:no-string-literal
+      fin = data['count'];
+      fin = Math.floor( fin / NbElementParPage) - 1;
+      return range(1, fin).pipe(
+          concatMap( numPage => this.http.get(url + '?page=' + numPage))
+        );
+    }));
   }
 }

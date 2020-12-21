@@ -1,15 +1,26 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { species } from '../Characteristics/species';
+import { Injectable } from '@angular/core';
+import { Observable, range } from 'rxjs';
+import { concatMap, mergeMap } from 'rxjs/operators';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class SpeciesService {
 
-// tslint:disable-next-line: class-name
-export class speciesService {
-  constructor(private http: HttpClient, ){
-  }
-  getSpecies(): Observable<species[]>{
+  constructor(private http: HttpClient) { }
+
+  getSpecies(): Observable<any> {
+    let fin = 0;
     const url = 'https://swapi.dev/api/species/';
-    return this.http.get(url).pipe(map((data: species) => data.results));
+    const NbElementParPage = 10;
+    return this.http.get(url).pipe(mergeMap( data => {
+      // tslint:disable-next-line:no-string-literal
+      fin = data['count'];
+      fin = Math.floor( fin / NbElementParPage) - 1;
+      return range(1, fin).pipe(
+          concatMap( numPage => this.http.get(url + '?page=' + numPage))
+        );
+    }));
   }
 }

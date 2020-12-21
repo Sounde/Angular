@@ -1,15 +1,26 @@
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { range } from 'rxjs';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { vehicles } from '../Characteristics/vehicles';
+import { concatMap, mergeMap } from 'rxjs/operators';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class VehiclesService {
 
-// tslint:disable-next-line: class-name
-export class vehiclesService {
-  constructor(private http: HttpClient, ){
-  }
-  getVehicles(): Observable<vehicles[]>{
-    const url = 'https://swapi.dev/api/vehicles/';
-    return this.http.get(url).pipe(map((data: vehicles) => data.results));
+  constructor(private http: HttpClient) { }
+  getVehicles(): Observable<any> {
+    let fin = 0;
+    const url = 'https://swapi.dev/api/starships/';
+    const NbElementParPage = 10;
+    return this.http.get(url).pipe(mergeMap( data => {
+      // tslint:disable-next-line:no-string-literal
+      fin = data['count'];
+      fin = Math.floor( fin / NbElementParPage) - 1;
+      return range(1, fin).pipe(
+          concatMap( numPage => this.http.get(url + '?page=' + numPage))
+        );
+    }));
   }
 }

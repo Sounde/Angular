@@ -1,16 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators/';
-import { Observable } from 'rxjs';
-import { planets } from '../Characteristics/planets';
+import { Observable, range } from 'rxjs';
+import { concatMap, mergeMap } from 'rxjs/operators';
 
-export class PlanetsServices{
+@Injectable({
+  providedIn: 'root'
+})
+export class PlanetsService {
 
-  constructor(private http: HttpClient){
-  }
+  constructor(private http: HttpClient) { }
 
-  getPlanets(): Observable<planets[]>{
+  getPlanets(): Observable<any> {
+    let fin = 0;
     const url = 'https://swapi.dev/api/planets/';
-    return this.http.get(url).pipe(map((data: planets) => data.results));
+    const NbElementParPage = 10;
+    return this.http.get(url).pipe(mergeMap( data => {
+      // tslint:disable-next-line:no-string-literal
+      fin = data['count'];
+      fin = Math.floor( fin / NbElementParPage) - 1;
+      return range(1, fin).pipe(
+          concatMap( numPage => this.http.get(url + '?page=' + numPage))
+        );
+    }));
   }
 }
