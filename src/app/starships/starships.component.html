@@ -1,1 +1,6 @@
 <p>starships works!</p>
+<button (click)="getDataStarshipsfromAPI()" >Get Data Starships</button>
+
+<ul *ngFor="let starships of data">
+  <li>{{starships.name}}</li>
+</ul>

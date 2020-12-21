@@ -1,1 +1,6 @@
 <p>vehicles works!</p>
+<button (click)="getDataVehiclesfromAPI()" >Get Data Vehicles</button>
+
+<ul *ngFor="let vehicles of data">
+  <li>{{vehicles.name}}</li>
+</ul>

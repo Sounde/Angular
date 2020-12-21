@@ -7,19 +7,20 @@ import { speciesService } from '../services/species.service';
   templateUrl: './species.component.html',
   styleUrls: ['./species.component.css']
 })
-export class SpeciesComponent implements OnInit  {
-  [x: string]: any;
+export class SpeciesComponent {
 
-  peoples: species[];
+  data: Array<any>;
+
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private speciesService: speciesService)
   {
+    this.data = new Array<any>();
   }
 
-  ngOnInit(): void{
-    this.speciesService.getSpecies().subscribe((result: any) => {
-      // tslint:disable-next-line: no-string-literal
-      this.species = result['name'];
+  getDataSpeciesfromAPI(): void {
+    // tslint:disable-next-line:no-shadowed-variable
+    this.speciesService.getSpecies().subscribe((data) => {
+      this.data = data;
     });
   }
 }

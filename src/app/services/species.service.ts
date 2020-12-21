@@ -8,7 +8,7 @@ import { species } from '../Characteristics/species';
 export class speciesService {
   constructor(private http: HttpClient, ){
   }
-  getSpecies(): Observable<species>{
+  getSpecies(): Observable<species[]>{
     const url = 'https://swapi.dev/api/species/';
     return this.http.get(url).pipe(map((data: species) => data.results));
   }

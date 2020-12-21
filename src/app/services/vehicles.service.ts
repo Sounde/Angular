@@ -8,7 +8,7 @@ import { vehicles } from '../Characteristics/vehicles';
 export class vehiclesService {
   constructor(private http: HttpClient, ){
   }
-  getVehicles(): Observable<vehicles>{
+  getVehicles(): Observable<vehicles[]>{
     const url = 'https://swapi.dev/api/vehicles/';
     return this.http.get(url).pipe(map((data: vehicles) => data.results));
   }

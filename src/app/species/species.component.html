@@ -1,1 +1,6 @@
 <p>species works!</p>
+<button (click)="getDataSpeciesfromAPI()" >Get Data Species</button>
+
+<ul *ngFor="let species of data">
+  <li>{{species.name}}</li>
+</ul>

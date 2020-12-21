@@ -8,7 +8,7 @@ import { starships } from '../Characteristics/starships';
 export class starshipsService {
   constructor(private http: HttpClient, ){
   }
-  getStarships(): Observable<starships>{
+  getStarships(): Observable<starships[]>{
     const url = 'https://swapi.dev/api/starships/';
     return this.http.get(url).pipe(map((data: starships) =>  data.results));
   }

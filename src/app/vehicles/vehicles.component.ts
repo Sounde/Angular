@@ -7,20 +7,22 @@ import { vehiclesService } from '../services/vehicles.service';
   templateUrl: './vehicles.component.html',
   styleUrls: ['./vehicles.component.css']
 })
-export class VehiclesComponent implements OnInit  {
+export class VehiclesComponent  {
 
-  vehicles: vehicles[];
+  data: Array<any>;
+
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private vehiclesService: vehiclesService)
   {
+    this.data = new Array<any>();
   }
-
-  ngOnInit(): void{
-    this.vehiclesService.getVehicles().subscribe((result: any) => {
-      // tslint:disable-next-line: no-string-literal
-      this.vehicles = result['name'];
+  getDataVehiclesfromAPI(): void {
+    // tslint:disable-next-line:no-shadowed-variable
+    this.vehiclesService.getVehicles().subscribe((data) => {
+    this.data = data;
     });
   }
+
 }
 
 
