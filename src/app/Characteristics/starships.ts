@@ -2,12 +2,11 @@ import { Url } from 'url';
 
 // tslint:disable-next-line: class-name
 export class starships{
-  [x: string]: any;
   name: string;
   model: string;
   manufacturer: string;
   // tslint:disable-next-line: variable-name
-  costs_in_credits: number;
+  cost_in_credits: number;
   length: number;
   // tslint:disable-next-line: variable-name
   max_atmosphering_speed: number;
@@ -25,6 +24,8 @@ export class starships{
   created: Date;
   edited: Date;
   url: Array<string>;
+  id: number;
+  results: any;
 
   // tslint:disable-next-line: no-shadowed-variable
   constructor(starships?: any)
@@ -43,5 +44,8 @@ export class starships{
     this.length = starships.length;
     this.passengers = starships.passengers;
     this.manufacturer = starships.manufacturer;
+    this.id = starships.id;
+    this.results = starships.results;
+    this.cost_in_credits = starships.cost_in_credits;
   }
 }

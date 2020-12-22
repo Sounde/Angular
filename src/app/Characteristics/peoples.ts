@@ -2,8 +2,7 @@
 
 // tslint:disable-next-line: class-name
 export class peoples{
-  [x: string]: any;
-
+  results: any;
   name: string;
   height: number;
   mass: number;
@@ -44,6 +43,7 @@ export class peoples{
     this.created = peoples.created;
     this.edited = peoples.edited;
     this.url = peoples.url;
+    this.results = peoples.results;
   }
 
 

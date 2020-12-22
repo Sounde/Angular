@@ -12,9 +12,9 @@ import { films} from '../Characteristics/films';
 export class movieService {
 
   // tslint:disable-next-line: no-shadowed-variable
-  constructor(private http: HttpClient, ) {
+  constructor(private http: HttpClient) {
   }
-  getMovies(): Observable<films[]>{
+  getMovies(): Observable<any>{
     const url = 'https://swapi.dev/api/films/';
     return this.http.get(url).pipe(map((data: films) => data.results));
   }

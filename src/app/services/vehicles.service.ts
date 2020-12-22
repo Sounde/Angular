@@ -12,7 +12,7 @@ export class VehiclesService {
   constructor(private http: HttpClient) { }
   getVehicles(): Observable<any> {
     let fin = 0;
-    const url = 'https://swapi.dev/api/starships/';
+    const url = 'https://swapi.dev/api/vehicles/';
     const NbElementParPage = 10;
     return this.http.get(url).pipe(mergeMap( data => {
       // tslint:disable-next-line:no-string-literal

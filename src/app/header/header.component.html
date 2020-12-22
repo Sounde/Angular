@@ -1,5 +1,11 @@
 <div id="banniere-image"></div>
 <nav id="navbar">
   <img src="/assets/sabre.jpg" class="img-fluid" alt="">
-  <li><a routerLink="movies">movies</a></li>
+  <a routerLink="/movies" routerLinkActive="active">Movies</a>
+  <a routerLink="/peoples" routerLinkActive="active">Peoples</a>
+  <a routerLink="/planets" routerLinkActive="active">Planets</a>
+  <a routerLink="/vehicles" routerLinkActive="active">Vehicles</a>
+  <a routerLink="/starships" routerLinkActive="active">Starships</a>
+  <a routerLink="/species" routerLinkActive="active">Species</a>
 </nav>
+<router-outlet></router-outlet>

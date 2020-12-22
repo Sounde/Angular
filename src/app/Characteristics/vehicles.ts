@@ -1,4 +1,3 @@
-import { Url } from 'url';
 
 // tslint:disable-next-line: class-name
 export class vehicles{
@@ -40,6 +39,8 @@ export class vehicles{
     this.edited = vehicles.edited;
     this.length = vehicles.length;
     this.passengers = vehicles.passengers;
+    // tslint:disable-next-line: no-unused-expression
+    this.results = vehicles.results;
   }
 }
 

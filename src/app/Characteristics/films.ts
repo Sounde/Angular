@@ -1,8 +1,6 @@
 
-
 // tslint:disable-next-line: class-name
 export class films{
-  [x: string]: any;
   title: string;
   // tslint:disable-next-line: variable-name
   episode_id: number;
@@ -20,6 +18,8 @@ export class films{
   created: Date;
   edited: Date;
   url: string;
+  results: any;
+
   // tslint:disable-next-line: no-shadowed-variable
   constructor(films?: any){
     this.title = films.title;
@@ -36,5 +36,6 @@ export class films{
     this.created = films.created;
     this.edited = films.edited;
     this.url = films.url;
+    this.results =  films.results;
   }
 }

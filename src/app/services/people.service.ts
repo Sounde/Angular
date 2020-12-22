@@ -11,9 +11,7 @@ import { range } from 'rxjs';
 export class PeopleService{
 
   constructor(private http: HttpClient){
-
   }
-
   getPeoples(): Observable<any> {
     let fin = 0;
     const url = 'https://swapi.dev/api/people/';

@@ -2,8 +2,7 @@
 
 // tslint:disable-next-line: class-name
 export class planets{
-  [x: string]: any;
-
+  results: any;
   name: string;
   // tslint:disable-next-line: variable-name
   rotation_period: number;
@@ -39,10 +38,7 @@ export class planets{
     this.created = planets.created;
     this.edited = planets.edited;
     this.url = planets.url;
-
+    this.results = planets.results;
   }
-
-
-
 }
 

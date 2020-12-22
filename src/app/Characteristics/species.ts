@@ -2,7 +2,6 @@
 
 // tslint:disable-next-line: class-name
 export class species{
-  [x: string]: any;
   name: string;
   classification: string;
   designation: string;
@@ -23,6 +22,8 @@ export class species{
   created: Date;
   edited: Date;
   url: string;
+  results: any;
+
   // tslint:disable-next-line: no-shadowed-variable
   constructor(species?: any){
     this.name = species.name;
@@ -40,5 +41,6 @@ export class species{
     this.created = species.created;
     this.edited = species.edited;
     this.url = species.url;
+    this.results = species.results;
   }
 }

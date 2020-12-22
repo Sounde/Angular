@@ -1,13 +1,12 @@
-div
-{
-    height: 375px;
-    background: url('https://i2.wp.com/pingouin-grincheux.net/WordPress/wp-content/uploads/2015/08/Star-Wars-Concept-Art_19.jpg?resize=720%2C405') no-repeat;
-    position: relative;
-    width:  100%;
-    background-position: left;
+div{
+  background-image: url('https://media.discordapp.net/attachments/781446516627603476/788106655513968650/ImgFond-3.png?width=1920&height=445');
+  background-position: 0vw;
+  height: 375px;
+  width: initial;
 }
 
-img{
+
+nav img {
   margin-left: auto;
   width: 50px;
 }
@@ -15,17 +14,32 @@ img{
 nav{
   background-color: black;
   flex-direction: row;
+  display: auto;
+  justify-content: center;
+  list-style-type: upper-roman;
+  font-size: medium;
+  flex-grow: 1;
 }
 
-button{
+nav a{ /* Marge intérieure */
+  padding: 69px;
+  color: yellow; /* Couleur du texte */
+}
+
+nav a:hover{
+  background-color: red;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+/*button{
   background-color: black;
   color: white;
   background: transparent;
   border: none !important;
-  justify-content: center; /* Les éléments portés sont centrés à l'horizontal */
-  list-style-type: none; /* Cette liste n'a pas de puce */
+  justify-content: center; /* Les éléments portés sont centrés à l'horizontal
+  list-style-type: none; /* Cette liste n'a pas de puce
 }
 
 button:hover {
   background-color: lightslategrey;
-}
+}*/
